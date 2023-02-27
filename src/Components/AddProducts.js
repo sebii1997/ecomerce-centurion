@@ -6,6 +6,7 @@ export const AddProducts = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
+    const [category, setCategory] = useState('');
     const [image, setImage] = useState(null);
 
     const [imageError, setImageError] = useState('');
@@ -44,6 +45,7 @@ export const AddProducts = () => {
                 fs.collection('Products').add({
                     title,
                     description,
+                    category,
                     price: Number(price),
                     URL
                 }).then(() => {
@@ -82,6 +84,19 @@ export const AddProducts = () => {
             <label>Precio del producto</label>
             <input type="number" className='form-control' required onChange={(e)=>setPrice(e.target.value)} value={price}></input>
             <br></br>
+            <label>Categoria del producto</label>
+            <select className='form-control' required value={category} onChange={(e) => setCategory(e.target.value)}>
+                <option value="">Seleccionar categoria del producto</option>
+                <option>Placas madres</option>
+                <option>Gabinete</option>
+                <option>Procesadores</option>
+                <option>Memoria ram</option>
+                <option>Placas de video</option>
+                <option>Monitores</option>
+                <option>Discos SSD</option>
+                <option>Fuentes</option>
+                <option>Notebooks</option>
+            </select>
             <label>Subir imagen del producto</label>
             <input type="file" id='file' className='form-control' required onChange={handleProductImg}></input>
             

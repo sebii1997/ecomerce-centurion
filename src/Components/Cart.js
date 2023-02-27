@@ -144,7 +144,7 @@ export const Cart = () => {
             {cartProducts.length > 0 && (
                 <div className='container-fluid'>
                     <h1 className='text-center'>Carrito</h1>
-                    <div className='products-box'>
+                    <div className='products-box cart'>
                         <CartProducts cartProducts={cartProducts} cartProductIncrease={cartProductIncrease} cartProductDecrease={cartProductDecrease} />
                     </div>
                     <div className='summary-box'>

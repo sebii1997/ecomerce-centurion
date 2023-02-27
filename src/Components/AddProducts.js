@@ -97,6 +97,7 @@ export const AddProducts = () => {
                 <option>Fuentes</option>
                 <option>Notebooks</option>
             </select>
+            <br></br>
             <label>Subir imagen del producto</label>
             <input type="file" id='file' className='form-control' required onChange={handleProductImg}></input>
             
